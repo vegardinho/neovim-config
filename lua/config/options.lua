@@ -1,3 +1,4 @@
+-- Keep editor state separate from the configuration directory.
 local state_dir = vim.fn.stdpath("config") .. "/state"
 local backup_dir = state_dir .. "/backup"
 local swap_dir = state_dir .. "/swap"
@@ -11,6 +12,7 @@ vim.cmd("filetype plugin indent on")
 vim.cmd("syntax enable")
 
 vim.opt.mouse = "a"
+-- OSC 52 integration in clipboard.lua allows copying over SSH.
 vim.opt.clipboard = "unnamedplus"
 
 vim.opt.number = true
